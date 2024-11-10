@@ -1,0 +1,31 @@
+@use '_constants' as *;
+
+@mixin min-screen($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin media-sm() {
+  @include min-screen($breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin media-md() {
+  @include min-screen($breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin media-lg() {
+  @include min-screen($breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin media-xl() {
+  @include min-screen($breakpoint-xl) {
+    @content;
+  }
+}

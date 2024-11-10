@@ -1,0 +1,11 @@
+@use "../../assets/scss/media" as *;
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 8px;
+
+  @include media-xl {
+    padding: 0 82px;
+  }
+}

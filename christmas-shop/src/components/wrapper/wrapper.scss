@@ -1,0 +1,6 @@
+@use '../../assets/scss/_colors.scss' as *;
+
+.wrapper {
+  background-color: $color-primary;
+  border-radius: 20px;
+}

@@ -1,3 +1,9 @@
-.random {
-  color: forestgreen;
-}
+@use "modern-normalize";
+@use "./assets/scss/global.scss" as *;
+@use "./assets/scss/colors" as *;
+@use "./assets/scss/fonts" as *;
+@use "./components/container/container.scss" as *;
+@use "./components/wrapper/wrapper.scss" as *;
+@use "./components/header/header.scss" as *;
+@use "./components/nav/nav.scss" as *;
+@use "./components/burger/burger.scss" as *;

@@ -1,10 +1,8 @@
-import './style.scss';
-import { Component } from './components/Component';
+import "./style.scss";
+import createNav from "./components/nav/create-nav";
+import Menu from "./components/menu/menu";
 
-const title = new Component({
-  tag: 'h1',
-  classes: 'random',
-  text: 'Christmas shop',
-});
+const nav = createNav();
+document.body.querySelector("[data-header]").append(nav);
 
-document.body.append(title.getNode());
+new Menu("[data-burger]", "[data-nav]", "[data-nav-link]");

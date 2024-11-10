@@ -1,0 +1,29 @@
+@use "../../assets/scss/media" as *;
+@use "../../assets/scss/colors" as *;
+
+.header {
+  padding: 12px 0;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+
+  &__logo {
+    z-index: 1;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  &__logo-text {
+    color: $color-dark;
+  }
+
+  &__burger-button {
+    z-index: 1;
+    @include media-md {
+      display: none;
+    }
+  }
+}

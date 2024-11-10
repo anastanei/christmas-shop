@@ -1,0 +1,16 @@
+@use "_colors" as *;
+
+@mixin focus-style($color: $color-primary, $outline-width: 2px) {
+  outline: none;
+  box-shadow: 0 0 0 $outline-width $color;
+}
+
+@mixin text-action-s {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
