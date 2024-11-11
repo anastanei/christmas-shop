@@ -14,3 +14,24 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin extend-click($offset: 5px) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -#{$offset};
+    right: -#{$offset};
+    bottom: -#{$offset};
+    left: -#{$offset};
+  }
+}

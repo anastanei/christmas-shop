@@ -1,13 +1,17 @@
 @use "../../assets/scss/media" as *;
+@use "../../assets/scss/mixins" as *;
 @use "../../assets/scss/colors" as *;
 
 .header {
-  padding: 12px 0;
-  display: flex;
-  gap: 12px;
-  justify-content: space-between;
+  &__container {
+    padding: 12px 0;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+  }
 
   &__logo {
+    @include extend-click(5px);
     z-index: 1;
     padding: 8px 20px;
     display: flex;
@@ -17,6 +21,7 @@
   }
 
   &__logo-text {
+    text-wrap: nowrap;
     color: $color-dark;
   }
 
