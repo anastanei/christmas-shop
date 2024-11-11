@@ -1,7 +1,9 @@
 @use "../../assets/scss/media" as *;
+@use "../../assets/scss/colors" as *;
 
 .footer {
   user-select: none;
+  color: $color-dark;
 
   &__container {
     padding-block: 60px;

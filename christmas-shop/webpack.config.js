@@ -30,6 +30,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      filename: "index.html",
+      favicon: "src/assets/images/icon.svg",
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/gifts.html",
+      filename: "gifts.html",
       favicon: "src/assets/images/icon.svg",
       inject: "body",
     }),

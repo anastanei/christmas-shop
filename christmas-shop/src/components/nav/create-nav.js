@@ -6,10 +6,10 @@ export default function createNav() {
   const navList = createElement("ul", "nav__list");
 
   const navItems = [
-    { text: "gifts", href: "" },
-    { text: "about", href: "" },
-    { text: "best", href: "" },
-    { text: "contacts", href: "" },
+    { text: "gifts", href: "gifts.html" },
+    { text: "about", href: "index.html#about" },
+    { text: "best", href: "index.html#best" },
+    { text: "contacts", href: "#footer" },
   ];
 
   navItems.forEach((item) => {
