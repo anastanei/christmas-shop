@@ -29,7 +29,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      favicon: "src/assets/svg/icon.svg",
+      favicon: "src/assets/images/icon.svg",
       inject: "body",
     }),
   ],
@@ -45,11 +45,8 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        include: [
-          path.resolve(__dirname, "src/assets/images"),
-          path.resolve(__dirname, "src/svg"),
-        ],
+        test: /\.(svg|webp)$/i,
+        include: [path.resolve(__dirname, "src/assets/images")],
         type: "asset/resource",
         generator: {
           filename: "images/[name][ext]",
@@ -75,5 +72,8 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".scss"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
   },
 };

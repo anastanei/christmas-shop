@@ -2,7 +2,7 @@
 @use "../../assets/scss/mixins" as *;
 
 .burger {
-  @include extend-click;
+  @include extend-click(5px);
   position: relative;
   width: 40px;
   height: 40px;

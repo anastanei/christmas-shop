@@ -1,6 +1,6 @@
-@use '../../assets/scss/_colors.scss' as *;
+@use "../../assets/scss/_colors.scss" as *;
 
-.wrapper {
+.main {
   background-color: $color-primary;
   border-radius: 20px;
 }

@@ -1,0 +1,27 @@
+@use "../../assets/scss/media" as *;
+@use "../../assets/scss/fonts" as *;
+@use "../../assets/scss/colors" as *;
+
+.section-hero {
+  user-select: none;
+  color: $color-static-white;
+  background-image: url("@/assets/images/background-hero.webp");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 20px 20px 0 0;
+
+  &__container {
+    padding-block: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 13.4em;
+    text-align: center;
+  }
+}

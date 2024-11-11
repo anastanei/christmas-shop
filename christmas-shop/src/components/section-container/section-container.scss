@@ -1,9 +1,9 @@
 @use "../../assets/scss/media" as *;
 
 .section-container {
-  padding: 0 8px;
+  padding-inline: 8px;
 
   @include media-xl {
-    padding: 0 82px;
+    padding-inline: 82px;
   }
 }

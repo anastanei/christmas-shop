@@ -34,4 +34,8 @@
     bottom: -#{$offset};
     left: -#{$offset};
   }
+
+  &:active {
+    opacity: 0.8;
+  }
 }

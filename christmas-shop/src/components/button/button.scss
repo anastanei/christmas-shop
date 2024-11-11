@@ -1,0 +1,18 @@
+@use "../../assets/scss/colors" as *;
+@use "../../assets/scss/mixins" as *;
+
+.button {
+  @include extend-click(5px);
+  padding: 20px 32px;
+  color: $color-static-white;
+  background-color: $color-dark;
+  border-radius: 20px;
+  transition:
+    color 0.3s ease-out,
+    background-color 0.3s ease-out;
+
+  @include hover {
+    color: $color-dark;
+    background-color: $color-static-white;
+  }
+}

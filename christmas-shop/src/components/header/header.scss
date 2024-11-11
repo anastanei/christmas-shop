@@ -3,8 +3,9 @@
 @use "../../assets/scss/colors" as *;
 
 .header {
+  overflow-x: hidden;
   &__container {
-    padding: 12px 0;
+    padding-block: 12px;
     display: flex;
     gap: 12px;
     justify-content: space-between;
@@ -12,7 +13,7 @@
 
   &__logo {
     @include extend-click(5px);
-    z-index: 1;
+    z-index: 5;
     padding: 8px 20px;
     display: flex;
     align-items: center;
@@ -26,7 +27,7 @@
   }
 
   &__burger-button {
-    z-index: 1;
+    z-index: 5;
     @include media-md {
       display: none;
     }
