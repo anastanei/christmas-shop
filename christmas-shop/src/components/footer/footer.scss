@@ -1,0 +1,30 @@
+@use "../../assets/scss/media" as *;
+
+.footer {
+  user-select: none;
+
+  &__container {
+    padding-block: 60px;
+  }
+
+  &__contacts {
+    margin-bottom: 60px;
+    display: grid;
+    gap: 12px;
+
+    @include media-lg {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__contact {
+    list-style: none;
+  }
+
+  &__footer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-direction: column;
+  }
+}

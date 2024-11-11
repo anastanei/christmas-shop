@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js", // точка входа
@@ -32,6 +33,14 @@ module.exports = {
       favicon: "src/assets/images/icon.svg",
       inject: "body",
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/assets/images"),
+          to: "images",
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -45,7 +54,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(svg|webp)$/i,
+        test: /\.(svg|webp|avif|png)$/i,
         include: [path.resolve(__dirname, "src/assets/images")],
         type: "asset/resource",
         generator: {
@@ -53,7 +62,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(woff|woff2)$/i,
         include: path.resolve(__dirname, "src/assets/fonts"),
         type: "asset/resource",
         generator: {
@@ -71,7 +80,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".scss"],
+    extensions: [".js", ".scss", ".html"],
     alias: {
       "@": path.resolve(__dirname, "src"),
     },

@@ -16,10 +16,23 @@
 }
 
 @mixin hover {
+  & {
+    transition: color 0.3s ease-out;
+  }
   @media (hover: hover) {
     &:hover {
       @content;
     }
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.hover-default {
+  @include hover {
+    color: $color-primary;
   }
 }
 
@@ -33,9 +46,5 @@
     right: -#{$offset};
     bottom: -#{$offset};
     left: -#{$offset};
-  }
-
-  &:active {
-    opacity: 0.8;
   }
 }

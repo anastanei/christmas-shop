@@ -1,0 +1,20 @@
+@use "../../assets/scss/mixins" as *;
+.socials {
+  display: flex;
+  gap: 12px;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    @include extend-click;
+    display: block;
+    padding: 8px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
