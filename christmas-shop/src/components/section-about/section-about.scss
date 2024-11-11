@@ -1,0 +1,48 @@
+@use "../../assets/scss/colors" as *;
+@use "../../assets/scss/media" as *;
+
+.section-about {
+  background-image: url("@/assets/images/background-snow.webp");
+  color: $color-dark;
+
+  &__container {
+    padding-block: 60px;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    background-color: $color-static-white;
+    border-radius: 20px;
+
+    @include media-md {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__text-area {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    @include media-md {
+      padding: 46px 60px;
+    }
+
+    @include media-lg {
+      padding-block: 100px;
+    }
+  }
+
+  &__intro {
+    color: $color-primary;
+  }
+
+  &__image {
+    // text-align: center;
+    min-height: 528px;
+    background-image: url("@/assets/images/santa.webp");
+  }
+}

@@ -3,7 +3,7 @@
 .section-container {
   padding-inline: 8px;
 
-  @include media-xl {
+  @include media-lg {
     padding-inline: 82px;
   }
 }
