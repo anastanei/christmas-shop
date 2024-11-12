@@ -3,6 +3,7 @@
 
 .button {
   @include extend-click(5px);
+  @include text-action-s;
   padding: 20px 32px;
   color: $color-static-white;
   background-color: $color-dark;
