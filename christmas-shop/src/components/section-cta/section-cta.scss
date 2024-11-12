@@ -1,0 +1,60 @@
+@use "../../assets/scss/colors" as *;
+
+.section-cta {
+  color: $color-static-white;
+  text-align: center;
+  background-image: url("@/assets/images/background-cta.webp");
+
+  user-select: none;
+
+  &__container {
+    padding-block: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 18em;
+  }
+
+  &__intro {
+    margin-bottom: 8px;
+  }
+}
+
+.timer {
+  padding: 8px 12px 12px 12px;
+  background-color: $color-static-white-40;
+  border-radius: 20px;
+  display: flex;
+
+  &__item {
+    position: relative;
+    width: 80px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 1px;
+      height: 20px;
+      background-color: $color-static-white;
+      transform: translateY(-50%);
+    }
+
+    &:last-child::before {
+      content: none;
+    }
+  }
+
+  &__value {
+    display: block;
+  }
+
+  &__unit {
+    display: block;
+  }
+}

@@ -30,12 +30,6 @@
   }
 }
 
-.hover-default {
-  @include hover {
-    color: $color-primary;
-  }
-}
-
 @mixin extend-click($offset: 5px) {
   position: relative;
 

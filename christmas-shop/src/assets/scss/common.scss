@@ -1,5 +1,14 @@
+@use "mixins" as *;
+@use "_colors" as *;
+
 .img-in-picture {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.hover-default {
+  @include hover {
+    color: $color-primary;
+  }
 }

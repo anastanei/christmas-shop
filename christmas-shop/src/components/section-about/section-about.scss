@@ -41,8 +41,8 @@
   }
 
   &__image {
-    // text-align: center;
     min-height: 528px;
+    border-radius: 20px;
     background-image: url("@/assets/images/santa.webp");
   }
 }
