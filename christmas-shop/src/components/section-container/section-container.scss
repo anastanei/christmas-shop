@@ -1,7 +1,9 @@
 @use "../../assets/scss/media" as *;
 
 .section-container {
+  text-align: center;
   padding-inline: 8px;
+  user-select: none;
 
   @include media-lg {
     padding-inline: 82px;

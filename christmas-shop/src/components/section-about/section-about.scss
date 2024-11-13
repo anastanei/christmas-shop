@@ -21,11 +21,13 @@
   }
 
   &__text-area {
+    max-width: 26.7em;
     padding: 60px 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
+    text-align: left;
 
     @include media-md {
       padding: 46px 60px;

@@ -1,0 +1,43 @@
+@use "../../assets/scss/colors" as *;
+
+.section-slider {
+  background-image: url("@/assets/images/background-snow.webp");
+  color: $color-static-white;
+
+  &__container {
+    overflow: hidden;
+    padding-block: 60px;
+  }
+
+  &__intro {
+    margin-bottom: 12px;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+}
+
+.slider {
+  &__wrapper {
+  }
+
+  &__slides {
+    width: fit-content;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__slide {
+    &--image {
+      width: 200px;
+      height: auto;
+
+      & img {
+        border-radius: 20px;
+      }
+    }
+  }
+}

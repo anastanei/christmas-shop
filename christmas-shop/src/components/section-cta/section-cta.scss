@@ -2,11 +2,8 @@
 
 .section-cta {
   color: $color-static-white;
-  text-align: center;
   background-image: url("@/assets/images/background-cta.webp");
   border-radius: 0 0 20px 20px;
-
-  user-select: none;
 
   &__container {
     padding-block: 180px;

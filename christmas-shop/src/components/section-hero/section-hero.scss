@@ -3,7 +3,6 @@
 @use "../../assets/scss/colors" as *;
 
 .section-hero {
-  user-select: none;
   color: $color-static-white;
   background-image: url("@/assets/images/background-hero.webp");
   border-radius: 20px 20px 0 0;
