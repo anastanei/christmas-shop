@@ -6,11 +6,12 @@
   border-radius: 0 0 20px 20px;
 
   &__container {
-    padding-block: 180px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+
+    padding-block: 180px;
   }
 
   &__title {
@@ -23,10 +24,10 @@
 }
 
 .timer {
+  display: flex;
   padding: 8px 12px 12px 12px;
   background-color: $color-static-white-40;
   border-radius: 20px;
-  display: flex;
 
   &__item {
     position: relative;
@@ -34,13 +35,16 @@
 
     &::before {
       content: "";
+
       position: absolute;
-      right: 0;
       top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
       width: 1px;
       height: 20px;
+
       background-color: $color-static-white;
-      transform: translateY(-50%);
     }
 
     &:last-child::before {

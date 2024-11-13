@@ -8,25 +8,26 @@
 @mixin text-action-s {
   font-family: Montserrat;
   font-size: 12px;
-  font-style: normal;
   font-weight: 600;
+  font-style: normal;
   line-height: 1.3;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @mixin hover {
   & {
     transition: color 0.3s ease-out;
   }
+
+  &:active {
+    opacity: 0.8;
+  }
+
   @media (hover: hover) {
     &:hover {
       @content;
     }
-  }
-
-  &:active {
-    opacity: 0.8;
   }
 }
 

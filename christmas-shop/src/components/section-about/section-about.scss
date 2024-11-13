@@ -2,8 +2,8 @@
 @use "../../assets/scss/media" as *;
 
 .section-about {
-  background-image: url("@/assets/images/background-snow.webp");
   color: $color-dark;
+  background-image: url("@/assets/images/background-snow.webp");
 
   &__container {
     padding-block: 60px;
@@ -21,12 +21,14 @@
   }
 
   &__text-area {
-    max-width: 26.7em;
-    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
+
+    max-width: 26.7em;
+    padding: 60px 20px;
+
     text-align: left;
 
     @include media-md {
@@ -44,7 +46,7 @@
 
   &__image {
     min-height: 528px;
-    border-radius: 20px;
     background-image: url("@/assets/images/santa.webp");
+    border-radius: 20px;
   }
 }

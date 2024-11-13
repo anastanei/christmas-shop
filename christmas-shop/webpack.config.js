@@ -2,9 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 
 module.exports = {
-  entry: "./src/index.js", // точка входа
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
@@ -48,6 +49,7 @@ module.exports = {
         },
       ],
     }),
+    new SpriteLoaderPlugin(),
   ],
   module: {
     rules: [
@@ -58,10 +60,24 @@ module.exports = {
           path.resolve(__dirname, "src/components"),
           path.resolve(__dirname, "src/assets/scss"),
         ],
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
-        test: /\.(svg|webp|avif|png)$/i,
+        test: /\.(webp|avif|png)$/i,
         include: [path.resolve(__dirname, "src/assets/images")],
         type: "asset/resource",
         generator: {
@@ -83,6 +99,18 @@ module.exports = {
           path.resolve(__dirname, "src/assets/js"),
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.svg$/,
+        include: path.resolve(__dirname, "src/assets/svg"),
+        use: [
+          {
+            loader: "svg-sprite-loader",
+            options: {
+              symbolId: "[name]",
+            },
+          },
+        ],
       },
     ],
   },

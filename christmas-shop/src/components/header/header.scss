@@ -5,29 +5,34 @@
 .header {
   overflow-x: hidden;
   &__container {
-    padding-block: 12px;
     display: flex;
     gap: 12px;
     justify-content: space-between;
+    padding-block: 12px;
   }
 
   &__logo {
     @include extend-click(5px);
-    z-index: 5;
-    padding: 8px 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+
     cursor: pointer;
+
+    z-index: 5;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    padding: 8px 20px;
   }
 
   &__logo-text {
-    text-wrap: nowrap;
     color: $color-dark;
+    text-wrap: nowrap;
   }
 
   &__burger-button {
     z-index: 5;
+
     @include media-md {
       display: none;
     }

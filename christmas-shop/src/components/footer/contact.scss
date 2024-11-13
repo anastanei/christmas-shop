@@ -2,16 +2,19 @@
 @use "../../assets/scss/colors" as *;
 
 .contact {
+  cursor: pointer;
+
   position: relative;
-  gap: 12px;
+
   display: flex;
   flex-direction: column;
+  gap: 12px;
   align-items: center;
 
   padding: 20px;
+
   background-color: $color-content-background;
   border-radius: 20px;
-  cursor: pointer;
 
   &__image {
     display: block;
@@ -22,6 +25,7 @@
   &__link {
     &::before {
       content: "";
+
       position: absolute;
       top: 0;
       right: 0;

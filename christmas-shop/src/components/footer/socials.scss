@@ -9,6 +9,7 @@
 
   &__link {
     @include extend-click;
+
     display: block;
     padding: 8px;
   }

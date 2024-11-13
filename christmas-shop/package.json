@@ -2,7 +2,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src && stylelint '**/*.{css,scss}'",
     "deploy": "npm run build && npx gh-pages -d dist -e christmas-shop"
   },
   "devDependencies": {
@@ -15,10 +15,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^4.6.2",
     "gh-pages": "^6.2.0",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.1",
@@ -27,7 +24,11 @@
     "prettier-eslint-cli": "^8.0.1",
     "sass": "^1.80.4",
     "sass-loader": "^16.0.2",
+    "stylelint": "^16.10.0",
+    "stylelint-config-clean-order": "^6.1.0",
     "svg-sprite-loader": "^6.0.11",
+    "svgo": "^3.3.2",
+    "svgo-loader": "^4.0.0",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"

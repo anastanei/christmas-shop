@@ -3,18 +3,23 @@
 
 .burger {
   @include extend-click(5px);
+
+  cursor: pointer;
   position: relative;
   width: 40px;
   height: 40px;
-  cursor: pointer;
 
   &__line {
     position: absolute;
     left: 50%;
+
     display: block;
+
     width: 20px;
     height: 1px;
+
     background-color: $color-dark;
+
     transition: transform 0.3s ease;
 
     &:nth-child(1) {

@@ -1,8 +1,8 @@
 @use "../../assets/scss/colors" as *;
 
 .section-slider {
-  background-image: url("@/assets/images/background-snow.webp");
   color: $color-static-white;
+  background-image: url("@/assets/images/background-snow.webp");
 
   &__container {
     overflow-x: hidden;
@@ -23,11 +23,12 @@
   }
 
   &__slides {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
     width: fit-content;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
   }
 
   &__slide {
