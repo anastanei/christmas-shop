@@ -1,4 +1,5 @@
 @use "../../assets/scss/colors" as *;
+@use "../../assets/scss/mixins" as *;
 
 .section-slider {
   color: $color-static-white;
@@ -24,7 +25,7 @@
 
   &__slides {
     display: flex;
-    gap: 20px;
+    gap: 21px;
     align-items: center;
 
     width: fit-content;
@@ -40,5 +41,44 @@
         border-radius: 20px;
       }
     }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+  }
+}
+
+.slider-button {
+  @include extend-click(5px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+
+  border: 1px solid $color-static-white;
+  border-radius: 20px;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include hover {
+    color: $color-primary;
+    background-color: $color-static-white;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: $color-static-white-40;
+    border-color: $color-static-white-40;
+  }
+
+  &:first-child &__icon {
+    transform: scaleX(-1);
   }
 }
