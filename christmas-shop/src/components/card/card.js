@@ -1,11 +1,28 @@
 import createElement from "../../assets/js/create-element";
 
 export default class Card {
-  constructor(containerSelector) {
+  constructor(containerSelector, type, title) {
     this.container = document.querySelector(containerSelector);
-    this.tag = "for work";
-    this.imgType = "for-harmony";
-    this.title = "Spontaneous Coding Philosopher";
+    this.type = type;
+
+    switch (this.type) {
+      case "work":
+        this.tagName = "for work";
+        this.type = "work";
+        break;
+      case "health":
+        this.tagName = "for health";
+        this.type = "health";
+        break;
+      case "harmony":
+        this.tagName = "for harmony";
+        this.type = "harmony";
+        break;
+      default:
+        this.tagName = "for work";
+        this.type = "work";
+    }
+    this.title = title;
     const card = this.createCard();
     this.container.append(card);
   }
@@ -22,14 +39,18 @@ export default class Card {
 
   createTextArea() {
     const textArea = createElement("div", "card__text-area");
-    const tag = createElement("div", "card__tag header-4", this.tag);
+    const tagName = createElement(
+      "div",
+      `card__tag card__tag--${this.type} header-4`,
+      this.tagName,
+    );
     const title = createElement("h3", "card__title header-3", this.title);
-    textArea.append(tag, title);
+    textArea.append(tagName, title);
     return textArea;
   }
 
   createPicture() {
-    const imgName = this.imgType; // variable
+    const imgName = this.type;
     const imgAlt =
       "A transparent glass Christmas tree ball ornament with a gold top, containing a miniature purple Christmas tree, gold decorations, and small gifts inside.";
     const imgPath = `./images/${imgName}`;

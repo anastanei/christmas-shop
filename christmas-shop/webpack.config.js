@@ -49,6 +49,17 @@ module.exports = {
         },
       ],
     }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(
+    //         __dirname,
+    //         "src/components/section-best/best-data.json",
+    //       ),
+    //       to: "section-best/",
+    //     },
+    //   ],
+    // }),
     new SpriteLoaderPlugin(),
   ],
   module: {
@@ -99,6 +110,10 @@ module.exports = {
           path.resolve(__dirname, "src/assets/js"),
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.json$/,
+        type: "json",
       },
       {
         test: /\.svg$/,

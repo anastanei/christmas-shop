@@ -26,7 +26,17 @@
   }
 
   &__tag {
-    color: $color-tag-pink;
+    &--work {
+      color: $color-tag-purple;
+    }
+
+    &--health {
+      color: $color-tag-green;
+    }
+
+    &--harmony {
+      color: $color-tag-pink;
+    }
   }
 
   &__title {
