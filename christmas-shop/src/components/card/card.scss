@@ -1,0 +1,36 @@
+@use "../../assets/scss/colors" as *;
+
+.card {
+  width: fit-content;
+  list-style: none;
+  background-color: $color-content-background;
+  border-radius: 20px;
+
+  &__image {
+    display: block;
+    width: 310px;
+    height: auto;
+
+    & img {
+      border-radius: 20px 20px 0 0;
+    }
+  }
+  &__text-area {
+    min-height: 112px;
+    padding: 20px;
+
+    text-align: left;
+
+    background-color: $color-static-white;
+    border-radius: 20px;
+  }
+
+  &__tag {
+    color: $color-tag-pink;
+  }
+
+  &__title {
+    width: 270px;
+    color: $color-dark;
+  }
+}

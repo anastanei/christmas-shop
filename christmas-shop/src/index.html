@@ -83,12 +83,12 @@
               </picture>
             </div>
             <div class="slider__buttons">
-              <button class="slider-button" type="button" aria-hidden data-slider-backward disabled>
+              <button class="slider-button" type="button" aria-hidden="true" data-slider-backward disabled>
                 <svg class="slider-button__icon">
                   <use xlink:href="#arrow"></use>
                 </svg>
               </button>
-              <button class="slider-button" type="button" aria-hidden data-slider-forward>
+              <button class="slider-button" type="button" aria-hidden="true" data-slider-forward>
                 <svg class="slider-button__icon">
                   <use xlink:href="#arrow"></use>
                 </svg>
@@ -97,12 +97,15 @@
           </div>
         </div>
       </section>
-      <section class="section-best" id="best">
-        <div class="section-container section-best__container">
-          Best
+      <section class="section-best background" id="best">
+        <div class="section-container section-best__container ">
+          <h2 class="section-best__title text-caption">Best Gifts</h2>
+          <p class="section-best__intro header-2">especially for you</p>
+          <ul class="section-best__card-list" data-best-container>
+          </ul>
         </div>
       </section>
-      <section class="section-cta background" id="cta">
+      <section class="background section-cta" id="cta">
         <div class="section-container section-cta__container">
           <h2 class="section-cta__title header-2">Ready&nbsp;to&nbsp;start&nbsp;your journey&nbsp;to&nbsp;a&nbsp;better
             version of yourself?</h2>

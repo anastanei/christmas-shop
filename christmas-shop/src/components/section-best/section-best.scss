@@ -1,0 +1,20 @@
+@use "../../assets/scss/colors" as *;
+.section-best {
+  color: $color-static-white;
+  background-image: url("@/assets/images/background-snow.webp");
+
+  &__container {
+    padding-block: 60px;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__intro {
+    margin-bottom: 20px;
+  }
+
+  &__card-list {
+  }
+}
