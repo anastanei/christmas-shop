@@ -9,6 +9,7 @@
 
 .hover-default {
   @include hover {
+    cursor: pointer;
     color: $color-primary;
   }
 }

@@ -1,8 +1,13 @@
 @use "../../assets/scss/colors" as *;
 
 .card {
+  position: relative;
+
   width: fit-content;
+
+  color: $color-dark;
   list-style: none;
+
   background-color: $color-content-background;
   border-radius: 20px;
 
@@ -15,6 +20,7 @@
       border-radius: 20px 20px 0 0;
     }
   }
+
   &__text-area {
     min-height: 112px;
     padding: 20px;
@@ -41,6 +47,10 @@
 
   &__title {
     width: 270px;
-    color: $color-dark;
+  }
+
+  &__button {
+    position: absolute;
+    inset: 0;
   }
 }

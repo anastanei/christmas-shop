@@ -28,11 +28,16 @@ export default class Card {
   }
 
   createCard() {
-    const card = createElement("li", "card");
+    const card = createElement("li", "card hover-default");
     const article = createElement("article", "card__article");
+    const button = createElement("button", "card__button", "", {
+      type: "button",
+      "data-card-button": true,
+      "aria-label": "Learn more",
+    });
     const picture = this.createPicture();
     const textArea = this.createTextArea();
-    article.append(picture, textArea);
+    article.append(picture, textArea, button);
     card.append(article);
     return card;
   }
