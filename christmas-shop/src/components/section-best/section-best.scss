@@ -4,6 +4,7 @@
   background-image: url("@/assets/images/background-snow.webp");
 
   &__container {
+    container-type: inline-size;
     padding-block: 60px;
   }
 
@@ -16,6 +17,19 @@
   }
 
   &__card-list {
-    min-height: 342px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: stretch;
+    justify-content: center;
+
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  @container (min-width: 1276px) {
+    .section-best__card-list {
+      max-width: none;
+    }
   }
 }

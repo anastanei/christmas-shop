@@ -49,17 +49,6 @@ module.exports = {
         },
       ],
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(
-    //         __dirname,
-    //         "src/components/section-best/best-data.json",
-    //       ),
-    //       to: "section-best/",
-    //     },
-    //   ],
-    // }),
     new SpriteLoaderPlugin(),
   ],
   module: {
