@@ -19,6 +19,11 @@ export default function createNav(isGiftPage) {
       href: item.href,
       "data-nav-link": true,
     });
+
+    if (isGiftPage && item.text === "gifts") {
+      link.classList.add("nav__link--active");
+    }
+
     listItem.appendChild(link);
     navList.appendChild(listItem);
   });

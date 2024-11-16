@@ -90,5 +90,11 @@
       color: $color-primary;
       background-color: $color-primary-10;
     }
+
+    &--active {
+      pointer-events: none;
+      color: $color-primary;
+      background-color: $color-primary-10;
+    }
   }
 }

@@ -1,6 +1,11 @@
 @use "../../assets/scss/media" as *;
 
 .container {
+  display: flex;
+  flex-direction: column;
+
   max-width: 1440px;
+  min-height: 100dvh;
+  min-height: 100vh;
   margin-inline: auto;
 }
