@@ -1,17 +1,15 @@
 @use "../../assets/scss/mixins" as *;
 .socials {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 
   &__item {
     list-style: none;
   }
 
   &__link {
-    @include extend-click;
-
     display: block;
-    padding: 8px;
+    padding: 6px;
   }
 
   &__icon {
