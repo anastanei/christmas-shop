@@ -1,18 +1,23 @@
 @use "../../assets/scss/colors" as *;
+@use "../../assets/scss/media" as *;
 
 .section-cta {
   color: $color-static-white;
+  background-color: $color-primary;
   background-image: url("@/assets/images/background-cta.webp");
-  background-position: center bottom;
-  border-radius: 0 0 20px 20px;
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    justify-content: center;
 
-    padding-block: 180px;
+    min-height: 704px;
+
+    @include media-md {
+      min-height: 668px;
+    }
   }
 
   &__title {
