@@ -1,0 +1,58 @@
+@use "../../assets/scss/fonts" as *;
+@use "../../assets/scss/colors" as *;
+@use "../../assets/scss/mixins" as *;
+
+.section-gifts {
+  background-image: url("@/assets/images/background-garland.webp");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    padding-block: 60px;
+  }
+
+  &__title {
+    max-width: 13.32em;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  &__form {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + .radio-label {
+    pointer-events: none;
+    background-color: $color-static-white-20;
+  }
+}
+
+.radio-label {
+  @extend .text-action-s;
+
+  padding: 12px 20px;
+  color: $color-static-white;
+  border-radius: 12px;
+
+  @include hover {
+    cursor: pointer;
+    background-color: $color-static-white-20;
+  }
+}

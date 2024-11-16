@@ -1,9 +1,10 @@
 import createElement from "../../assets/js/create-element";
 
 export default class Card {
-  constructor(containerSelector, type, title) {
+  constructor(containerSelector, type, title, src) {
     this.container = document.querySelector(containerSelector);
     this.type = type;
+    this.src = src;
 
     switch (this.type) {
       case "For Work":
@@ -65,7 +66,7 @@ export default class Card {
   createPicture() {
     const imgName = this.type;
     const imgAlt = this.alt;
-    const imgPath = `./images/${imgName}`;
+    const imgPath = `${this.src}images/${imgName}`;
     const picture = createElement("picture", "card__image");
     const sourceAVIF = createElement("source", "", "", {
       srcSet: `${imgPath}.avif`,

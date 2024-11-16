@@ -1,6 +1,7 @@
 @use "../../assets/scss/_colors.scss" as *;
 
 .main {
+  overflow: hidden;
   background-color: $color-primary;
   border-radius: 20px;
 }
