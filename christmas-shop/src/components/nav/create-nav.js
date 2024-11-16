@@ -1,15 +1,16 @@
 import createElement from "../../assets/js/create-element";
 
-export default function createNav() {
+export default function createNav(isGiftPage) {
+  const src = isGiftPage ? "../" : "./";
   const nav = createElement("nav", "header__nav nav", "", { "data-nav": true });
 
   const navList = createElement("ul", "nav__list");
 
   const navItems = [
-    { text: "gifts", href: "gifts.html" },
-    { text: "about", href: "index.html#about" },
-    { text: "best", href: "index.html#best" },
-    { text: "contacts", href: "#footer" },
+    { text: "gifts", href: `${src}gifts/` },
+    { text: "about", href: `${src}#about` },
+    { text: "best", href: `${src}#best` },
+    { text: "contacts", href: `${src}#footer` },
   ];
 
   navItems.forEach((item) => {

@@ -6,21 +6,29 @@ export default class Card {
     this.type = type;
 
     switch (this.type) {
-      case "work":
+      case "For Work":
         this.tagName = "for work";
         this.type = "work";
+        this.alt =
+          "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.";
         break;
-      case "health":
+      case "For Health":
         this.tagName = "for health";
         this.type = "health";
+        this.alt =
+          "A transparent glass Christmas tree ball ornament with a gold top, containing a small snowman with a pink hat and scarf, along with gold decorations inside.";
         break;
-      case "harmony":
+      case "For Harmony":
         this.tagName = "for harmony";
         this.type = "harmony";
+        this.alt =
+          "A transparent glass Christmas tree ball ornament with a gold top, containing a miniature purple Christmas tree, gold decorations, and small gifts inside.";
         break;
       default:
         this.tagName = "for work";
         this.type = "work";
+        this.alt =
+          "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.";
     }
     this.title = title;
     const card = this.createCard();
@@ -56,8 +64,7 @@ export default class Card {
 
   createPicture() {
     const imgName = this.type;
-    const imgAlt =
-      "A transparent glass Christmas tree ball ornament with a gold top, containing a miniature purple Christmas tree, gold decorations, and small gifts inside.";
+    const imgAlt = this.alt;
     const imgPath = `./images/${imgName}`;
     const picture = createElement("picture", "card__image");
     const sourceAVIF = createElement("source", "", "", {

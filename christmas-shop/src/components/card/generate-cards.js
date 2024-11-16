@@ -1,7 +1,11 @@
 import Card from "./card";
 
-export default function generateCards(data, containerSelector) {
-  data.forEach((item) => {
+const getCardsByIndices = (data, indices) =>
+  indices.map((index) => data[index]);
+
+export default function generateCards(data, containerSelector, indices) {
+  const filteredData = getCardsByIndices(data, indices);
+  filteredData.forEach((item) => {
     new Card(containerSelector, item.category, item.name);
   });
 }

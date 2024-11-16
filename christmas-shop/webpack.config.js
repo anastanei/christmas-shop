@@ -5,10 +5,13 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    home: "./src/pages/home/index.js",
+    gifts: "./src/pages/gifts/index.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
+    filename: "[name]/index.js",
     clean: true,
   },
   devServer: {
@@ -30,16 +33,18 @@ module.exports = {
       filename: "[name].css",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/pages/home/index.html",
       filename: "index.html",
       favicon: "src/assets/images/icon.svg",
       inject: "body",
+      chunks: ["home"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/gifts.html",
-      filename: "gifts.html",
+      template: "./src/pages/gifts/gifts.html",
+      filename: "gifts/index.html",
       favicon: "src/assets/images/icon.svg",
       inject: "body",
+      chunks: ["gifts"],
     }),
     new CopyWebpackPlugin({
       patterns: [
