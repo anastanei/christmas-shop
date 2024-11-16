@@ -5,7 +5,7 @@
 .section-hero {
   color: $color-static-white;
   background-image: url("@/assets/images/background-hero.webp");
-  background-position: cover;
+  background-position:;
   border-radius: 20px 20px 0 0;
 
   &__container {
@@ -15,12 +15,7 @@
     align-items: center;
     justify-content: center;
 
-    height: 572px;
     padding-block: 120px;
-
-    @include media-md {
-      height: 524px;
-    }
   }
 
   &__title {
