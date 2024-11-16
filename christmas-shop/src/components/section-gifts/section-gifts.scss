@@ -1,6 +1,7 @@
 @use "../../assets/scss/fonts" as *;
 @use "../../assets/scss/colors" as *;
 @use "../../assets/scss/mixins" as *;
+@use "../../assets/scss/media" as *;
 
 .section-gifts {
   background-image: url("@/assets/images/background-garland.webp");
@@ -30,8 +31,12 @@
 
   &__form {
     display: flex;
-    gap: 8px;
     justify-content: center;
+
+    @include media-md {
+      gap: 8px;
+      padding: 12px 20px;
+    }
   }
 
   input {
@@ -47,12 +52,17 @@
 .radio-label {
   @extend .text-action-s;
 
-  padding: 12px 20px;
+  padding: 12px 8px;
   color: $color-static-white;
+  text-wrap: nowrap;
   border-radius: 12px;
 
   @include hover {
     cursor: pointer;
     background-color: $color-static-white-20;
+  }
+
+  @include media-md {
+    padding: 12px 20px;
   }
 }

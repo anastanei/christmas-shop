@@ -18,6 +18,12 @@
   }
 }
 
+@mixin media-md-burger() {
+  @include min-screen($breakpoint-md-burger) {
+    @content;
+  }
+}
+
 @mixin media-lg() {
   @include min-screen($breakpoint-lg) {
     @content;

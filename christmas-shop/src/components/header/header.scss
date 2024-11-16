@@ -33,7 +33,7 @@
   &__burger-button {
     z-index: 5;
 
-    @include media-md {
+    @include media-md-burger {
       display: none;
     }
   }

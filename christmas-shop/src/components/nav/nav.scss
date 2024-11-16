@@ -32,7 +32,7 @@
     opacity: 1;
   }
 
-  @include media-md {
+  @include media-md-burger {
     pointer-events: unset;
 
     position: static;
@@ -55,7 +55,7 @@
     min-height: 100vh;
     padding-top: 64px;
 
-    @include media-md {
+    @include media-md-burger {
       flex-direction: row;
       justify-content: flex-end;
       min-height: unset;
@@ -82,7 +82,7 @@
       color 0.3s ease-out,
       background-color 0.3s ease-out;
 
-    @include media-md {
+    @include media-md-burger {
       @include text-action-s;
     }
 
