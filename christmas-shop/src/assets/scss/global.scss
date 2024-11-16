@@ -49,3 +49,8 @@ ul {
     border-color: $color-primary;
   }
 }
+
+*:focus {
+  outline: 2px solid $color-primary;
+  box-shadow: 0 0 0 4px $color-static-white;
+}
