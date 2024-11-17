@@ -10,7 +10,7 @@ export default function createNav(isGiftPage) {
     { text: "gifts", href: `${src}gifts/` },
     { text: "about", href: `${src}#about` },
     { text: "best", href: `${src}#best` },
-    { text: "contacts", href: `${src}#footer` },
+    { text: "contacts", href: `#footer` },
   ];
 
   navItems.forEach((item) => {
