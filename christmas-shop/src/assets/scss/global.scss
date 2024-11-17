@@ -32,24 +32,6 @@ ul {
   padding: 0;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: $color-static-white;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $color-primary;
-  border: 2px solid $color-static-white;
-
-  &:hover {
-    cursor: pointer;
-    border-color: $color-primary;
-  }
-}
-
 *:focus-visible {
   border-radius: 4px;
   outline: 2px solid $color-primary;

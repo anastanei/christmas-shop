@@ -1,4 +1,6 @@
 @use "../../assets/scss/colors" as *;
+@use "../../assets/scss/media" as *;
+
 .section-best {
   color: $color-static-white;
   background-image: url("@/assets/images/background-snow.webp");
@@ -6,6 +8,10 @@
   &__container {
     container-type: inline-size;
     padding-block: 60px;
+
+    @include media-xl {
+      padding-inline: 72px;
+    }
   }
 
   &__title {
