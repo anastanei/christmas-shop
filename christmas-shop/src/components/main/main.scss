@@ -3,6 +3,6 @@
 .main {
   overflow: hidden;
   flex: 1;
-  background-color: $color-primary;
+  background: linear-gradient($color-primary, $color-static-white);
   border-radius: 20px;
 }
