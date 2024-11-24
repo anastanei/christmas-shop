@@ -7,7 +7,7 @@ export default function createNav(isGiftPage) {
   const navList = createElement("ul", "nav__list");
 
   const navItems = [
-    { text: "gifts", href: `${src}gifts/` },
+    { text: "gifts", href: `./gifts/` },
     { text: "about", href: `${src}#about` },
     { text: "best", href: `${src}#best` },
     { text: "contacts", href: `#footer` },
@@ -22,6 +22,7 @@ export default function createNav(isGiftPage) {
 
     if (isGiftPage && item.text === "gifts") {
       link.classList.add("nav__link--active");
+      link.removeAttribute("href");
     }
 
     listItem.appendChild(link);
