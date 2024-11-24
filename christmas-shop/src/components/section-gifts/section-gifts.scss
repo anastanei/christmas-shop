@@ -12,7 +12,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
     align-items: center;
 
     padding-block: 60px;
@@ -25,7 +25,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 0.75rem;
     justify-content: center;
   }
 
@@ -34,7 +34,7 @@
     justify-content: center;
 
     @include media-md {
-      gap: 8px;
+      gap: 0.5rem;
     }
   }
 
@@ -51,7 +51,7 @@
 .radio-label {
   @extend .text-action-s;
 
-  padding: 12px 8px;
+  padding: 0.75rem 0.5rem;
   color: $color-static-white;
   text-wrap: nowrap;
   border-radius: 12px;
@@ -62,6 +62,6 @@
   }
 
   @include media-md {
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
   }
 }

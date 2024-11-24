@@ -1,10 +1,10 @@
-@use "../../assets/scss/media" as *;
+@use "../../assets/scss/constants" as *;
 
 .container {
   display: flex;
   flex-direction: column;
 
-  max-width: 1440px;
+  max-width: $breakpoint-xl;
   min-height: 100dvh;
   min-height: 100vh;
   margin-inline: auto;

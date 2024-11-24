@@ -1,5 +1,5 @@
 $breakpoint-xl: 1440px;
 $breakpoint-lg: 1280px;
-$breakpoint-md-burger: 769px;
 $breakpoint-md: 768px;
-$breakpoint-sm: 468px;
+$breakpoint-md-burger: $breakpoint-md + 1px;
+$breakpoint-sm: 480px;
