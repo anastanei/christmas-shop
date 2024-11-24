@@ -1,3 +1,4 @@
+import * as styles from "./card.module.scss";
 import createElement from "../../assets/js/create-element";
 
 export default class Card {
@@ -5,6 +6,7 @@ export default class Card {
     this.container = document.querySelector(containerSelector);
     this.type = type;
     this.src = src;
+    console.log("styles", styles);
 
     switch (this.type) {
       case "For Work":
@@ -37,9 +39,9 @@ export default class Card {
   }
 
   createCard() {
-    const card = createElement("li", "card hover-default");
-    const article = createElement("article", "card__article");
-    const button = createElement("button", "card__button", "", {
+    const card = createElement("li", styles.card);
+    const article = createElement("article");
+    const button = createElement("button", styles.button, "", {
       type: "button",
       "data-card-button": true,
       "aria-label": "Learn more",
@@ -52,13 +54,13 @@ export default class Card {
   }
 
   createTextArea() {
-    const textArea = createElement("div", "card__text-area");
+    const textArea = createElement("div", styles.textArea);
     const tagName = createElement(
       "div",
-      `card__tag card__tag--${this.type} header-4`,
+      `${styles.tag} ${styles[this.type]} header-4`,
       this.tagName,
     );
-    const title = createElement("h3", "card__title header-3", this.title);
+    const title = createElement("h3", `${styles.title} header-3`, this.title);
     textArea.append(tagName, title);
     return textArea;
   }
@@ -67,7 +69,7 @@ export default class Card {
     const imgName = this.type;
     const imgAlt = this.alt;
     const imgPath = `${this.src}images/${imgName}`;
-    const picture = createElement("picture", "card__image");
+    const picture = createElement("picture", styles.image);
     const sourceAVIF = createElement("source", "", "", {
       srcSet: `${imgPath}.avif`,
       type: "image/avif",

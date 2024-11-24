@@ -59,7 +59,34 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.module\.scss$/i,
+        include: [
+          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "src/components"),
+          path.resolve(__dirname, "src/assets/scss"),
+        ],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              modules: {
+                localIdentName: "[name]__[local]__[hash:base64:5]",
+              },
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.scss$/i,
+        exclude: /\.module\.scss$/,
         include: [
           path.resolve(__dirname, "src"),
           path.resolve(__dirname, "src/components"),

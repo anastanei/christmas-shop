@@ -1,0 +1,61 @@
+@use "../../assets/scss/colors" as *;
+@use "../../assets/scss/common.scss" as *;
+
+.card {
+  @extend .hover-default;
+
+  position: relative;
+
+  width: fit-content;
+
+  color: $color-dark;
+  list-style: none;
+
+  background-color: $color-content-background;
+  border-radius: 20px;
+}
+
+.image {
+  display: block;
+  width: 310px;
+  height: auto;
+
+  img {
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.textArea {
+  min-height: 7rem;
+  padding: 1.25rem;
+
+  text-align: left;
+
+  background-color: $color-static-white;
+  border-radius: 20px;
+}
+
+.tag {
+  margin-bottom: 0.5rem;
+
+  &.work {
+    color: $color-tag-purple;
+  }
+
+  &.health {
+    color: $color-tag-green;
+  }
+
+  &.harmony {
+    color: $color-tag-pink;
+  }
+}
+
+.title {
+  width: 16.875rem;
+}
+
+.button {
+  position: absolute;
+  inset: 0;
+}
