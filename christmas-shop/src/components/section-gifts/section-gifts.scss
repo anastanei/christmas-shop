@@ -37,31 +37,49 @@
       gap: 0.5rem;
     }
   }
-
-  input {
-    display: none;
-  }
-
-  input:checked + .radio-label {
-    pointer-events: none;
-    background-color: $color-static-white-20;
-  }
 }
 
 .radio-label {
-  @extend .text-action-s;
+  position: relative;
 
-  padding: 0.75rem 0.5rem;
-  color: $color-static-white;
-  text-wrap: nowrap;
-  border-radius: 12px;
+  input {
+    pointer-events: auto;
 
-  @include hover {
-    cursor: pointer;
+    position: absolute;
+    inset: 0;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  input:checked + &__inner {
+    pointer-events: none;
     background-color: $color-static-white-20;
   }
 
-  @include media-md {
-    padding: 0.75rem 1.25rem;
+  &__inner {
+    @extend .text-action-s;
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: block;
+
+    padding: 0.75rem 0.5rem;
+
+    color: $color-static-white;
+    text-wrap: nowrap;
+
+    border-radius: 12px;
+
+    @include hover {
+      background-color: $color-static-white-20;
+    }
+
+    @include media-md {
+      padding: 0.75rem 1.25rem;
+    }
   }
 }

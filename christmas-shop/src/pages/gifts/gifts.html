@@ -30,14 +30,22 @@
         <div class="section-container section-gifts__container">
           <h2 class="section-gifts__title header-1">Achieve health, harmony, and inner strength</h2>
           <form class="section-gifts__form">
-            <input type="radio" name="gift-options" id="radio-0" checked>
-            <label class="radio-label" for="radio-0">All</label>
-            <input type="radio" name="gift-options" id="radio-1">
-            <label class="radio-label" for="radio-1">for work</label>
-            <input type="radio" name="gift-options" id="radio-2">
-            <label class="radio-label" for="radio-2">for health</label>
-            <input type="radio" name="gift-options" id="radio-3">
-            <label class="radio-label" for="radio-3">for harmony</label>
+            <label class="radio-label" for="radio-0">
+              <input type="radio" name="gift-options" id="radio-0" checked>
+              <span class="radio-label__inner">All</span>
+            </label>
+            <label class="radio-label" for="radio-1">
+              <input type="radio" name="gift-options" id="radio-1" disabled>
+              <span class="radio-label__inner">for work</span>
+            </label>
+            <label class="radio-label" for="radio-2">
+              <input type="radio" name="gift-options" id="radio-2" disabled>
+              <span class="radio-label__inner">for health</span>
+            </label>
+            <label class="radio-label" for="radio-3">
+              <input type="radio" name="gift-options" id="radio-3" disabled>
+              <span class="radio-label__inner">for harmony</span>
+            </label>
           </form>
           <ul class="section-gifts__list" data-gifts></ul>
         </div>
