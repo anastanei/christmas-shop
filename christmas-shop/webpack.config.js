@@ -77,6 +77,19 @@ module.exports = {
             },
           },
           {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require("autoprefixer")(),
+                  require("postcss-preset-env")({
+                    stage: 0,
+                  }),
+                ],
+              },
+            },
+          },
+          {
             loader: "sass-loader",
             options: {
               sourceMap: true,
