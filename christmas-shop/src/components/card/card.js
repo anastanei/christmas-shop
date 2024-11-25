@@ -6,7 +6,6 @@ export default class Card {
     this.container = document.querySelector(containerSelector);
     this.type = type;
     this.src = src;
-    console.log("styles", styles);
 
     switch (this.type) {
       case "For Work":

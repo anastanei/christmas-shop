@@ -1,9 +1,10 @@
 import "../../style.scss";
-
+import logSelfReview from "./self-review";
 import createNav from "../../components/nav/create-nav";
 import Menu from "../../components/menu/menu";
 
 export default function createLayout(isGiftPage = false) {
+  logSelfReview();
   const requireSvg = require.context("../../assets/svg", false, /\.svg$/);
   const nav = createNav(isGiftPage);
 
