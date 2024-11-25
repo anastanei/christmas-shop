@@ -29,7 +29,7 @@
     opacity: 0.5;
   }
 
-  @media (hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       @content;
     }
