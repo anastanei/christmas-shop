@@ -1,40 +1,35 @@
 import * as styles from "./card.module.scss";
 import createElement from "../../assets/js/create-element";
 
+const typeData = {
+  "For Work": {
+    tagName: "for work",
+    type: "work",
+    alt: "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.",
+  },
+  "For Health": {
+    tagName: "for health",
+    type: "health",
+    alt: "A transparent glass Christmas tree ball ornament with a gold top, containing a small snowman with a pink hat and scarf, along with gold decorations inside.",
+  },
+  "For Harmony": {
+    tagName: "for harmony",
+    type: "harmony",
+    alt: "A transparent glass Christmas tree ball ornament with a gold top, containing a miniature purple Christmas tree, gold decorations, and small gifts inside.",
+  },
+};
+
 export default class Card {
-  constructor(containerSelector, type, title, src) {
-    this.container = document.querySelector(containerSelector);
+  constructor({ type, title, src }) {
     this.type = type;
     this.src = src;
 
-    switch (this.type) {
-      case "For Work":
-        this.tagName = "for work";
-        this.type = "work";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.";
-        break;
-      case "For Health":
-        this.tagName = "for health";
-        this.type = "health";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a small snowman with a pink hat and scarf, along with gold decorations inside.";
-        break;
-      case "For Harmony":
-        this.tagName = "for harmony";
-        this.type = "harmony";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a miniature purple Christmas tree, gold decorations, and small gifts inside.";
-        break;
-      default:
-        this.tagName = "for work";
-        this.type = "work";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.";
-    }
+    const currentTypeData = typeData[type];
+    this.tagName = currentTypeData.tagName;
+    this.type = currentTypeData.type;
+    this.alt = currentTypeData.alt;
+
     this.title = title;
-    const card = this.createCard();
-    this.container.append(card);
   }
 
   createCard() {

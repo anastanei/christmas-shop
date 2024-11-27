@@ -9,7 +9,11 @@ export default function generateCards({ containerSelector, indices } = {}) {
   const data = giftData;
   const src = getSrc();
   const filteredData = getCardsByIndices(data, indices);
+  console.log(data, filteredData);
+  const container = document.querySelector(containerSelector);
   filteredData.forEach((item) => {
-    new Card(containerSelector, item.category, item.name, src);
+    const card = new Card({ type: item.category, title: item.name, src });
+    const cardEl = card.createCard();
+    container.append(cardEl);
   });
 }
