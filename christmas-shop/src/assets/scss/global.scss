@@ -5,6 +5,10 @@ html {
   font-family: Montserrat;
 }
 
+body.overflow-hidden {
+  overflow: hidden;
+}
+
 button {
   cursor: pointer;
   color: inherit;

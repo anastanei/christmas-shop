@@ -5,15 +5,22 @@ export class Nav {
   constructor() {
     this.isGiftPage = window.location.pathname.includes("/gifts");
     this.src = this.isGiftPage ? "../" : "./";
+    this.button = document.querySelector(`[data-burger]`);
+    this.button.addEventListener("click", () => this.toggleMenu());
+    this.initMediaQuery();
   }
 
-  createNav() {
-    const nav = createElement("nav", `header__nav ${styles.nav}`, "", {
+  createNavContainer() {
+    this.nav = createElement("nav", `header__nav ${styles.nav}`, "", {
       "data-nav": true,
     });
+    this.navList = createElement("ul", styles.navList);
+    this.nav.append(this.navList);
+    this.createNavElements();
+    return this.nav;
+  }
 
-    const navList = createElement("ul", styles.navList);
-
+  createNavElements() {
     const navItems = [
       { text: "gifts", href: `./gifts/` },
       { text: "about", href: `${this.src}#about` },
@@ -39,17 +46,39 @@ export class Nav {
       }
 
       listItem.append(link);
-      navList.append(listItem);
+      this.navList.append(listItem);
+      listItem.addEventListener("click", () => this.toggleMenu(false));
     });
+  }
 
-    nav.append(navList);
+  toggleMenu(forceHide = null) {
+    const isOpened =
+      forceHide !== null ? false : !this.nav.classList.contains(styles.visible);
+    this.nav.classList.toggle(styles.visible, isOpened);
+    this.button.classList.toggle("burger--opened", isOpened);
+    document.body.classList.toggle("overflow-hidden", isOpened);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
-    return nav;
+  initMediaQuery(breakpoint = 769) {
+    const mediaQuery = window.matchMedia(`(min-width: ${breakpoint}px)`);
+    mediaQuery.addEventListener("change", (event) =>
+      this.handleMediaChange(event),
+    );
+  }
+
+  handleMediaChange(event) {
+    if (event.matches) {
+      this.toggleMenu(false);
+    }
   }
 }
 
 export default function appendNav(parentSelector = "[data-header]") {
   const nav = new Nav();
-  const navEl = nav.createNav();
+  const navEl = nav.createNavContainer();
   document.body.querySelector(parentSelector).append(navEl);
 }
