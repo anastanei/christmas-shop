@@ -7,18 +7,26 @@ export default class Slider {
 
     this.contentWidth = this.slides.getBoundingClientRect().width;
 
-    this.totalClicks = 3;
+    this.totalClicks = 6;
     this.resetPosition();
     const resizeObserver = new ResizeObserver(() => {
       this.updateOffset();
     });
     resizeObserver.observe(this.slider);
 
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    this.handleMediaQueryChange(mediaQuery);
-    mediaQuery.addEventListener("change", () =>
-      this.handleMediaQueryChange(mediaQuery),
+    const mediaQueryMD = window.matchMedia("(min-width: 769px)");
+    const mediaQueryXL = window.matchMedia("(min-width: 1440px)");
+
+    this.handleMediaQueryMDChange(mediaQueryMD);
+    mediaQueryMD.addEventListener("change", () =>
+      this.handleMediaQueryMDChange(mediaQueryMD),
     );
+
+    this.handleMediaQueryMDChange(mediaQueryXL);
+    mediaQueryXL.addEventListener("change", () =>
+      this.handleMediaQueryXLChange(mediaQueryXL),
+    );
+
     this.buttonForward.addEventListener("click", () => this.handleClick(-1));
     this.buttonBackward.addEventListener("click", () => this.handleClick(1));
 
@@ -29,6 +37,7 @@ export default class Slider {
     this.currentClick = 0;
     this.currentOffset = 0;
     this.slides.style.transform = `translateX(0px)`;
+    this.updateButtons();
   }
 
   handleClick(direction) {
@@ -41,7 +50,6 @@ export default class Slider {
     const visibleAreaWidth = this.slider.getBoundingClientRect().width;
     this.offset = (this.contentWidth - visibleAreaWidth) / this.totalClicks;
     this.resetPosition();
-    this.updateButtons();
   }
 
   moveSlide(offset) {
@@ -54,8 +62,16 @@ export default class Slider {
     this.buttonForward.disabled = this.currentClick >= this.totalClicks;
   }
 
-  handleMediaQueryChange(mediaQuery) {
-    this.totalClicks = mediaQuery.matches ? 6 : 3;
+  handleMediaQueryMDChange(mediaQuery) {
+    this.totalClicks = mediaQuery.matches ? 3 : 6;
     this.updateOffset();
+  }
+
+  handleMediaQueryXLChange(mediaQuery) {
+    if (mediaQuery.matches) {
+      window.addEventListener("resize", this.resetPosition.bind(this));
+    } else {
+      window.removeEventListener("resize", this.resetPosition.bind(this));
+    }
   }
 }
