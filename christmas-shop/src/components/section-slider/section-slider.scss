@@ -20,16 +20,19 @@
 }
 
 .slider {
-  &__wrapper {
-  }
+  position: relative;
 
   &__slides {
+    position: relative;
+
     display: flex;
     gap: 21px;
     align-items: center;
 
     width: fit-content;
     margin-bottom: 20px;
+
+    transition: transform 0.5s ease-in-out;
   }
 
   &__slide {
