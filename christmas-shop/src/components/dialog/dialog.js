@@ -89,36 +89,44 @@ export default class Dialog {
     );
 
     featuresContainer.append(featuresTitle);
+
     Object.entries(this.item.superpowers).forEach(([name, value]) => {
-      const feature = createElement("div", dialogStyles.feature);
-
-      const featureName = createElement(
-        "div",
-        `${dialogStyles["feature-name"]} paragraph`,
-        name,
-      );
-      const featureValue = createElement(
-        "div",
-        dialogStyles["feature-value"],
-        value,
-      );
-      const svgWrapper = createElement("div", dialogStyles["svg-wrapper"]);
-
-      for (let i = 0; i < 5; i += 1) {
-        const svgContainer = createElement(
-          "div",
-          dialogStyles["feature-svg-container"],
-        );
-
-        svgContainer.append(createSnowflakeSvg());
-        svgWrapper.append(svgContainer);
-      }
-
-      feature.append(featureName, featureValue, svgWrapper);
+      const feature = this.createFeature([name, value]);
       featuresContainer.append(feature);
     });
 
     return featuresContainer;
+  }
+
+  createFeature([name, value]) {
+    const feature = createElement("div", dialogStyles.feature);
+
+    const featureName = createElement(
+      "div",
+      `${dialogStyles["feature-name"]} paragraph`,
+      name,
+    );
+    const featureValue = createElement(
+      "div",
+      dialogStyles["feature-value"],
+      value,
+    );
+    const svgWrapper = createElement("div", dialogStyles["svg-wrapper"]);
+    const shortValue = value / 100;
+
+    for (let i = 0; i < 5; i += 1) {
+      const isTransparent = !(i < shortValue);
+
+      const svgContainer = createElement(
+        "div",
+        `${dialogStyles["feature-svg-container"]} ${isTransparent && dialogStyles.transparent}`,
+      );
+
+      svgContainer.append(createSnowflakeSvg());
+      svgWrapper.append(svgContainer);
+    }
+    feature.append(featureName, featureValue, svgWrapper);
+    return feature;
   }
 
   openDialog() {
