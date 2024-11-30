@@ -4,6 +4,8 @@
 .card {
   @extend .hover-default;
 
+  position: relative;
+
   width: fit-content;
 
   color: $color-dark;
