@@ -4,7 +4,20 @@ export default function createElement(
   text = "",
   attributes = {},
 ) {
-  const element = document.createElement(tag);
+  const namespace = "http://www.w3.org/2000/svg";
+  const isSVGTag = [
+    "svg",
+    "path",
+    "use",
+    "g",
+    "rect",
+    "defs",
+    "clipPath",
+  ].includes(tag);
+  const element = isSVGTag
+    ? document.createElementNS(namespace, tag)
+    : document.createElement(tag);
+
   element.textContent = text;
 
   if (classes.length > 0) {
@@ -14,6 +27,5 @@ export default function createElement(
   Object.keys(attributes).forEach((attr) => {
     element.setAttribute(attr, attributes[attr]);
   });
-
   return element;
 }
