@@ -1,0 +1,33 @@
+@use "../../assets/scss/colors" as *;
+@use "../../assets/scss/media" as *;
+
+.scroll-button {
+  cursor: pointer;
+
+  position: fixed;
+  z-index: 5;
+  right: 8px;
+  bottom: 8px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  color: $color-primary;
+
+  background-color: $color-static-white;
+  border: solid 1px $color-primary;
+  border-radius: 50%;
+
+  & svg {
+    position: relative;
+    transform: rotate(-90deg);
+  }
+
+  @include media-md-burger {
+    display: none;
+  }
+}
