@@ -1,38 +1,31 @@
 export default function logSelfReview() {
   const criteria = {
-    title: "CrossCheck Criteria (100/100 points)",
+    title: "CrossCheck Criteria (90/90 points)",
     sections: [
       {
-        description:
-          "The layout of the pages aligns the design at a screen width of 1440px: +16",
+        description: "Implementation of the burger menu on both pages: +22",
+      },
+      {
+        description: "Implementation of the Slider on the home page: +18",
+      },
+      {
+        description: "Implementation of the Timer on the home page: +8",
       },
       {
         description:
-          "The layout of the pages aligns the design at a screen width of 768px: +16",
+          "When both opening or refreshing the page, 4 random cards are displayed in the block Best Gifts on the home page: +4",
       },
       {
         description:
-          "There is no horizontal scrollbar at all screen width up to 380px inclusive. All page content remains as per the design: it is not cropped, removed, or shifted to the side: +24",
+          "Implementation of the Category switching for products on the gifts page: +8",
       },
       {
         description:
-          "During smooth resizing of the browser window from 1440px to 380px, the layout occupies the full width of the window (including specified margins), elements adjust their sizes and positions appropriately without full scaling, no elements overlap, and images maintain their correct aspect ratios: +8",
+          "Implementation of the Scroll-to-Top button on the gifts page: +12",
       },
       {
         description:
-          "At screen widths of 768px, the menu and navigation links in <header> are concealed on both pages, and a burger menu icon is displayed: +4",
-      },
-      {
-        description:
-          "(Activation of the burger menu icon is not evaluated at this stage.)",
-      },
-      {
-        description:
-          "Hover effects are active on desktop devices (as per the Desktop device type in DevTools) and are disabled for mobile devices (as per the Mobile device type in DevTools) on both pages: +4",
-      },
-      {
-        description:
-          "The layout for both pages is validated and error-free according to the W3C Validator (https://validator.w3.org/): +12",
+          "Implementation of the Modal for selected gift on both pages: +18",
       },
     ],
   };
