@@ -115,14 +115,7 @@ export default class Dialog {
 
     for (let i = 0; i < 5; i += 1) {
       const isTransparent = !(i < shortValue);
-
-      const svgContainer = createElement(
-        "div",
-        `${dialogStyles["feature-svg-container"]} ${isTransparent && dialogStyles.transparent}`,
-      );
-
-      svgContainer.append(createSnowflakeSvg());
-      svgWrapper.append(svgContainer);
+      svgWrapper.append(createSnowflakeSvg(isTransparent));
     }
     feature.append(featureName, featureValue, svgWrapper);
     return feature;
