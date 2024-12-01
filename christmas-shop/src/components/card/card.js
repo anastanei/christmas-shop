@@ -9,7 +9,6 @@ export default class Card {
     this.item = item;
     this.type = item.category;
     this.src = src;
-    console.log(item);
     const currentTypeData = typeData[this.type];
 
     this.tagName = currentTypeData.tagName;

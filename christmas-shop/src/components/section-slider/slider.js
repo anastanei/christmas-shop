@@ -1,4 +1,4 @@
-export default class Slider {
+class Slider {
   constructor() {
     this.slider = document.querySelector("[data-slider]");
     this.slides = this.slider.querySelector("[data-slides]");
@@ -74,4 +74,8 @@ export default class Slider {
       window.removeEventListener("resize", this.resetPosition.bind(this));
     }
   }
+}
+
+export default function initSlider() {
+  new Slider();
 }

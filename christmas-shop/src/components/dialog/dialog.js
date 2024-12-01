@@ -3,7 +3,6 @@ import * as cardStyles from "../card/card.module.scss";
 import createElement from "../../assets/js/create-element";
 import createGiftPicture from "../gift-picture/create-gift-picture";
 import createSnowflakeSvg from "./createSnowflakeSvg";
-
 import typeData from "../card/type-data.json";
 
 export default class Dialog {
