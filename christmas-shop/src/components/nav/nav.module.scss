@@ -20,7 +20,7 @@
   opacity: 0;
   background-color: $color-static-white;
 
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
 
   &.visible {
     pointer-events: unset;
@@ -80,8 +80,8 @@
   border-radius: 12px;
 
   transition:
-    color 0.3s ease-out,
-    background-color 0.3s ease-out;
+    color 0.5s ease-out,
+    background-color 0.5s ease-out;
 
   @include media-md-burger {
     @include text-action-s;
