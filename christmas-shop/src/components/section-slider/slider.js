@@ -22,7 +22,7 @@ class Slider {
       this.handleMediaQueryMDChange(mediaQueryMD),
     );
 
-    this.handleMediaQueryMDChange(mediaQueryXL);
+    this.handleMediaQueryXLChange(mediaQueryXL);
     mediaQueryXL.addEventListener("change", () =>
       this.handleMediaQueryXLChange(mediaQueryXL),
     );
@@ -64,6 +64,7 @@ class Slider {
 
   handleMediaQueryMDChange(mediaQuery) {
     this.totalClicks = mediaQuery.matches ? 3 : 6;
+    console.log(mediaQuery, this.totalClicks);
     this.updateOffset();
   }
 
