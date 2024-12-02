@@ -71,7 +71,7 @@ export class Nav {
   }
 
   handleMediaChange(event) {
-    if (event.matches) {
+    if (event.matches && this.nav.classList.contains(styles.visible)) {
       this.toggleMenu(false);
     }
   }
