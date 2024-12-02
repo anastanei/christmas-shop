@@ -51,7 +51,14 @@ export default class Dialog {
       }
     });
 
+    dialog.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        this.closeDialog();
+      }
+    });
+
     document.body.append(dialog);
+
     return dialog;
   }
 
