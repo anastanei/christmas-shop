@@ -1,0 +1,131 @@
+@use "../../assets/scss/colors" as *;
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.dialog {
+  position: fixed;
+
+  max-width: 400px;
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  animation: fadeInScale 0.5s ease-out forwards;
+
+  &::backdrop {
+    background-color: rgba($color-dark, 0.8);
+  }
+
+  &:hover {
+    cursor: auto;
+    color: $color-dark;
+  }
+}
+.image {
+  position: relative;
+
+  overflow: hidden ;
+  display: block;
+
+  width: 100vw;
+  max-width: 400px;
+  height: 230px;
+
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 40px;
+  height: 40px;
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+
+    width: 30px;
+    height: 2px;
+
+    background-color: $color-dark;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.features {
+  background-color: transparent;
+}
+
+.features-title {
+  margin-bottom: 8px;
+}
+
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background-color: transparent;
+}
+
+.feature-name {
+  flex-grow: 1;
+  text-transform: capitalize;
+
+}
+
+.feature-value {
+  background-color: transparent;
+}
+
+.feature-svg-container {
+  width: 24px;
+  height: 24px;
+}
+
+.svg-wrapper {
+  display: flex;
+  gap: 8px;
+  color: $color-primary
+}
+
+
+.transparent {
+  opacity: 0.1;
+}

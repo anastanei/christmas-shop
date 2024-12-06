@@ -1,7 +1,9 @@
-import generateCards from "../../components/card/generate-cards";
-import giftData from "../../components/card/gift-data.json";
 import createLayout from "../../assets/js/create-layout";
+import initSlider from "../../components/section-slider/slider";
+import createBest from "../../components/section-best/createBest";
+import initTimer from "../../components/timer/timer";
 
-createLayout(false);
-const bestGiftsIndices = [1, 15, 3, 27];
-generateCards(giftData, "[data-best-container]", bestGiftsIndices);
+createLayout();
+initSlider();
+createBest();
+initTimer();

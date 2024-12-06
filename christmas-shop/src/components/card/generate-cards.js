@@ -1,16 +1,12 @@
 import Card from "./card";
+import getSrc from "../../assets/js/get-src";
 
-const getCardsByIndices = (data, indices) =>
-  indices.map((index) => data[index]);
-
-export default function generateCards(
-  data,
-  containerSelector,
-  indices,
-  src = "./",
-) {
-  const filteredData = getCardsByIndices(data, indices);
-  filteredData.forEach((item) => {
-    new Card(containerSelector, item.category, item.name, src);
+export default function generateCards({ containerSelector, cards } = {}) {
+  const src = getSrc();
+  const container = document.querySelector(containerSelector);
+  cards.forEach((item) => {
+    const card = new Card({ item, src });
+    const cardEl = card.createCard();
+    container.append(cardEl);
   });
 }

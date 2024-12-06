@@ -2,7 +2,12 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   font-family: Montserrat;
+}
+
+body.overflow-hidden {
+  overflow: hidden;
 }
 
 button {

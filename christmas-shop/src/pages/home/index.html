@@ -54,8 +54,8 @@
         <div class="section-container section-slider__container">
           <p class="text-caption section-slider__intro">Become Happier!</p>
           <h2 class="header-2 section-slider__header">in the new 2025</h2>
-          <div class="section-slider__slider slider">
-            <div class="slider__slides">
+          <div class="section-slider__slider slider" data-slider>
+            <div class="slider__slides" data-slides>
               <p class="slider__slide text-slider">
                 Live
               </p>
@@ -79,6 +79,14 @@
                 <source srcset="./images/christmas-tree-ball.avif" type="image/avif">
                 <source srcset="./images/christmas-tree-ball.webp" type="image/webp">
                 <img class="img-in-picture" src="./images/christmas-tree-ball.png" alt="" width="200" height="200">
+              </picture>
+              <p class="slider__slide text-slider">
+                dream
+              </p>
+              <picture class="slider__slide slider__slide--image">
+                <source srcset="./images/fairytale-house.avif" type="image/avif">
+                <source srcset="./images/fairytale-house.webp" type="image/webp">
+                <img class="img-in-picture" src="./images/fairytale-house.png" alt="" width="200" height="200">
               </picture>
             </div>
             <div class="slider__buttons">
@@ -112,21 +120,21 @@
           <a href="gifts/" class="button">Explore Magical Gifts</a>
           <div>
             <p class="text-caption section-cta__intro">The New Year is Coming Soon...</p>
-            <div class="section-cta__timer timer">
+            <div class="section-cta__timer timer" data-timer>
               <div class="timer__item">
-                <span class="timer__value header-2">47</span>
+                <span class="timer__value header-2" data-timer-days>47</span>
                 <span class="timer__unit header-4">days</span>
               </div>
               <div class="timer__item">
-                <span class="timer__value header-2">5</span>
+                <span class="timer__value header-2" data-timer-hours>5</span>
                 <span class="timer__unit header-4">hours</span>
               </div>
               <div class="timer__item">
-                <span class="timer__value header-2">34</span>
+                <span class="timer__value header-2" data-timer-minutes>34</span>
                 <span class="timer__unit header-4">minutes</span>
               </div>
               <div class="timer__item">
-                <span class="timer__value header-2">12</span>
+                <span class="timer__value header-2" data-timer-seconds>12</span>
                 <span class="timer__unit header-4">seconds</span>
               </div>
             </div>

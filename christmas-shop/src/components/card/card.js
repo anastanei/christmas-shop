@@ -1,40 +1,21 @@
 import * as styles from "./card.module.scss";
 import createElement from "../../assets/js/create-element";
+import Dialog from "../dialog/dialog";
+import createGiftPicture from "../gift-picture/create-gift-picture";
+import typeData from "./type-data.json";
 
 export default class Card {
-  constructor(containerSelector, type, title, src) {
-    this.container = document.querySelector(containerSelector);
-    this.type = type;
+  constructor({ item, src }) {
+    this.item = item;
+    this.type = item.category;
     this.src = src;
+    const currentTypeData = typeData[this.type];
 
-    switch (this.type) {
-      case "For Work":
-        this.tagName = "for work";
-        this.type = "work";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.";
-        break;
-      case "For Health":
-        this.tagName = "for health";
-        this.type = "health";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a small snowman with a pink hat and scarf, along with gold decorations inside.";
-        break;
-      case "For Harmony":
-        this.tagName = "for harmony";
-        this.type = "harmony";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a miniature purple Christmas tree, gold decorations, and small gifts inside.";
-        break;
-      default:
-        this.tagName = "for work";
-        this.type = "work";
-        this.alt =
-          "A transparent glass Christmas tree ball ornament with a gold top, containing a pink gift box with a gold ribbon and small gold decorations inside.";
-    }
-    this.title = title;
-    const card = this.createCard();
-    this.container.append(card);
+    this.tagName = currentTypeData.tagName;
+    this.type = currentTypeData.type;
+    this.alt = currentTypeData.alt;
+
+    this.title = item.name;
   }
 
   createCard() {
@@ -45,10 +26,18 @@ export default class Card {
       "data-card-button": true,
       "aria-label": "Learn more",
     });
-    const picture = this.createPicture();
+    const picture = createGiftPicture({
+      type: this.type,
+      alt: this.alt,
+      src: this.src,
+      className: styles.image,
+    });
     const textArea = this.createTextArea();
     article.append(picture, textArea, button);
     card.append(article);
+    card.addEventListener("click", () => {
+      this.openDialog();
+    });
     return card;
   }
 
@@ -64,26 +53,11 @@ export default class Card {
     return textArea;
   }
 
-  createPicture() {
-    const imgName = this.type;
-    const imgAlt = this.alt;
-    const imgPath = `${this.src}images/${imgName}`;
-    const picture = createElement("picture", styles.image);
-    const sourceAVIF = createElement("source", "", "", {
-      srcSet: `${imgPath}.avif`,
-      type: "image/avif",
+  openDialog() {
+    const dialog = new Dialog({
+      item: this.item,
+      src: this.src,
     });
-    const sourceWEBP = createElement("source", "", "", {
-      srcSet: `${imgPath}.webp`,
-      type: "image/webp",
-    });
-    const img = createElement("img", "img-in-picture", "", {
-      src: `${imgPath}.png`,
-      alt: imgAlt,
-      width: 310,
-      height: 230,
-    });
-    picture.append(sourceAVIF, sourceWEBP, img);
-    return picture;
+    dialog.openDialog();
   }
 }
