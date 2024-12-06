@@ -1,13 +1,12 @@
 class Timer {
-  constructor(
-    timerSelector = "[data-timer]",
-    daysSelector = "[data-timer-days]",
-    hoursSelector = "[data-timer-hours]",
-    minutesSelector = "[data-timer-minutes]",
-    secondsSelector = "[data-timer-seconds]",
-  ) {
-    this.timer = document.querySelector(timerSelector);
+  constructor() {
+    const timerSelector = "[data-timer]";
+    const daysSelector = "[data-timer-days]";
+    const hoursSelector = "[data-timer-hours]";
+    const minutesSelector = "[data-timer-minutes]";
+    const secondsSelector = "[data-timer-seconds]";
 
+    this.timer = document.querySelector(timerSelector);
     this.daysHolder = this.timer.querySelector(daysSelector);
     this.hoursHolder = this.timer.querySelector(hoursSelector);
     this.minutesHolder = this.timer.querySelector(minutesSelector);
