@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas shop</title>
+  <meta name="description"
+    content="Christmas Shop — a festive online store offering Christmas accessories. Enjoy a vibrant design with easy navigation, quick-access categories, and a wide selection to find the perfect holiday gifts. Discover items to create the ultimate Christmas spirit!">
+<link rel="icon" href="icon.svg"><link href="home.css" rel="stylesheet"></head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="section-container header__container" data-header>
+        <a class="header__logo" href="index.html">
+          <svg class="header__logo-icon" width="24" height="24" fill="none" aria-hidden="true">
+            <use xlink:href="#icon-snowflake"></use>
+          </svg>
+          <h1 class="header__logo-text text-action-s">the&nbsp;gifts</h1>
+        </a>
+        <button class="header__burger-button burger" type="button" aria-label="Open navigation menu" data-burger>
+          <span class="burger__line burger__line"></span>
+          <span class="burger__line burger__line"></span>
+        </button>
+      </div>
+    </header>
+    <main class="main main--gradient">
+      <section class="section-hero background">
+        <div class="section-container section-hero__container">
+          <p class="section-hero__intro text-caption">Merry Christmas</p>
+          <h2 class="section-hero__title header-1">Gift yourself the magic&nbsp;of new possibilities</h2>
+          <a class="button" href="gifts/">Explore Magical Gifts</a>
+          <div class="section-hero__subtitle text-caption">and Happy New Year</div>
+        </div>
+      </section>
+      <section class="section-about background" id="about">
+        <div class="section-container section-about__container">
+          <div class="section-about__wrapper">
+            <div class="section-about__text-area">
+              <p class="section-about__intro text-caption">About</p>
+              <h2 class="section-about__title header-2">Unleash your inner superhero!</h2>
+              <p class="section-about__text paragraph">This New Year marks the beginning of your journey to inner
+                harmony
+                and new strengths. We offer unique gifts that will
+                help you improve your life.</p>
+            </div>
+            <div class="section-about__image background">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-slider background" id="slider">
+        <div class="section-container section-slider__container">
+          <p class="text-caption section-slider__intro">Become Happier!</p>
+          <h2 class="header-2 section-slider__header">in the new 2025</h2>
+          <div class="section-slider__slider slider" data-slider>
+            <div class="slider__slides" data-slides>
+              <p class="slider__slide text-slider">
+                Live
+              </p>
+              <picture class="slider__slide slider__slide--image">
+                <source srcset="./images/snowman.avif" type="image/avif">
+                <source srcset="./images/snowman.webp" type="image/webp">
+                <img class="img-in-picture" src="./images/snowman.png" alt="" width="200" height="200">
+              </picture>
+              <p class="slider__slide text-slider">
+                Create
+              </p>
+              <picture class="slider__slide slider__slide--image">
+                <source srcset="./images/christmas-trees.avif" type="image/avif">
+                <source srcset="./images/christmas-trees.webp" type="image/webp">
+                <img class="img-in-picture" src="./images/christmas-trees.png" alt="" width="200" height="200">
+              </picture>
+              <p class="slider__slide text-slider">
+                Love
+              </p>
+              <picture class="slider__slide slider__slide--image">
+                <source srcset="./images/christmas-tree-ball.avif" type="image/avif">
+                <source srcset="./images/christmas-tree-ball.webp" type="image/webp">
+                <img class="img-in-picture" src="./images/christmas-tree-ball.png" alt="" width="200" height="200">
+              </picture>
+              <p class="slider__slide text-slider">
+                dream
+              </p>
+              <picture class="slider__slide slider__slide--image">
+                <source srcset="./images/fairytale-house.avif" type="image/avif">
+                <source srcset="./images/fairytale-house.webp" type="image/webp">
+                <img class="img-in-picture" src="./images/fairytale-house.png" alt="" width="200" height="200">
+              </picture>
+            </div>
+            <div class="slider__buttons">
+              <button class="slider-button" type="button" aria-label="Move slider backward" data-slider-backward
+                disabled>
+                <svg class="slider-button__icon">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+              </button>
+              <button class="slider-button" type="button" aria-label="Move slider forward" data-slider-forward>
+                <svg class="slider-button__icon">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-best background" id="best">
+        <div class="section-container section-best__container ">
+          <h2 class="section-best__title text-caption">Best Gifts</h2>
+          <p class="section-best__intro header-2">especially for you</p>
+          <ul class="section-best__card-list" data-best-container>
+          </ul>
+        </div>
+      </section>
+      <section class="background section-cta" id="cta">
+        <div class="section-container section-cta__container">
+          <h2 class="section-cta__title header-2">Ready&nbsp;to&nbsp;start&nbsp;your journey&nbsp;to&nbsp;a&nbsp;better
+            version of yourself?</h2>
+          <a href="gifts/" class="button">Explore Magical Gifts</a>
+          <div>
+            <p class="text-caption section-cta__intro">The New Year is Coming Soon...</p>
+            <div class="section-cta__timer timer" data-timer>
+              <div class="timer__item">
+                <span class="timer__value header-2" data-timer-days>47</span>
+                <span class="timer__unit header-4">days</span>
+              </div>
+              <div class="timer__item">
+                <span class="timer__value header-2" data-timer-hours>5</span>
+                <span class="timer__unit header-4">hours</span>
+              </div>
+              <div class="timer__item">
+                <span class="timer__value header-2" data-timer-minutes>34</span>
+                <span class="timer__unit header-4">minutes</span>
+              </div>
+              <div class="timer__item">
+                <span class="timer__value header-2" data-timer-seconds>12</span>
+                <span class="timer__unit header-4">seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="section-container footer__container">
+        <ul class="footer__contacts">
+          <li class="footer__contact contact hover-default">
+            <picture class="contact__image">
+              <source srcset="./images/santa-claus.avif" type="image/avif">
+              <source srcset="./images/santa-claus.webp" type="image/webp">
+              <img class="img-in-picture" src="./images/santa-claus.png" alt="" width="80" height="80">
+            </picture>
+            <a class="contact__link text-action-l" href="tel:+375291112233" target="_blank"
+              rel="noopener noreferrer">+375 (29)
+              111-22-33</a>
+            <p class="contact__intro header-3">Call Us</p>
+          </li>
+          <li class="footer__contact contact hover-default">
+            <picture class="contact__image">
+              <source srcset="./images/christmas-tree.avif" type="image/avif">
+              <source srcset="./images/christmas-tree.webp" type="image/webp">
+              <img class="img-in-picture" src="./images/christmas-tree.png" alt="" width="80" height="80">
+            </picture>
+            <a class="contact__link text-action-l" href="https://maps.app.goo.gl/3JpT2MDzBHa7qk1DA" target="_blank"
+              rel="noopener noreferrer">Magic
+              forest</a>
+            <p class="contact__intro header-3">meet us</p>
+          </li>
+          <li class="footer__contact contact hover-default">
+            <picture class="contact__image">
+              <source srcset="./images/snake.avif" type="image/avif">
+              <source srcset="./images/snake.webp" type="image/webp">
+              <img class="img-in-picture" src="./images/snake.png" alt="" width="80" height="80">
+            </picture>
+            <a class="contact__link text-action-l" href="mailto:gifts@magic.com" target="_blank"
+              rel="noopener noreferrer">gifts@magic.com</a>
+            <p class="contact__intro header-3">write us</p>
+          </li>
+        </ul>
+        <div class="footer__wrapper">
+          <ul class="footer__socials socials">
+            <li class="socials__item">
+              <a class="socials__link hover-default" href="https://t.me/AfishaRSSchool" target="_blank"
+                rel="noopener noreferrer" aria-label="Visit our Telegram">
+                <svg class="socials__icon" aria-hidden="true">
+                  <use xlink:href="#social-telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://www.facebook.com/rsschoolEN/" target="_blank" rel="noopener noreferrer"
+                class="socials__link hover-default" aria-label="Visit our Facebook page">
+                <svg class="socials__icon" aria-hidden="true">
+                  <use xlink:href="#social-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://www.instagram.com/rsschool_en/" target="_blank" rel="noopener noreferrer"
+                class="socials__link hover-default" aria-label="Visit our Instagram page">
+                <svg class="socials__icon" aria-hidden="true">
+                  <use xlink:href="#social-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="https://x.com/rollingscopes" target="_blank" rel="noopener noreferrer"
+                class="socials__link hover-default" aria-label="Visit our X page">
+                <svg class="socials__icon" aria-hidden="true">
+                  <use xlink:href="#social-x"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <p class="footer__copyright paragraph">&copy;&nbsp;Copyright 2025, All Rights Reserved</p>
+          <a class="footer__intro text-caption hover-default" href="https://rs.school/" target="_blank"
+            rel="noopener noreferrer">Made in Rolling
+            Scopes
+            School</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+<script defer src="home/index.js"></script></body>
+
+</html>
